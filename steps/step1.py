@@ -14,11 +14,11 @@ class Step1:
         
     def get_device_from_server(self):
         device = Device()
-        response = requests.get(f'http://127.0.0.1:8000/hosts/devices/?bios_uuid={device.get_windows_bios_uuid()}')
+        response = requests.get(f'http://10.10.111.12:8047/hosts/devices/?bios_uuid={device.get_windows_bios_uuid()}')
         data = response.json()
         if data['results'] and data['count']==1:
             print("Bor")
         else:
             print("Yo'q create qilinayabdi")
-            send_new_device = requests.post('http://127.0.0.1:8000/hosts/devices/', data=device.get_device())
+            send_new_device = requests.post('http://10.10.111.12:8047/hosts/devices/', data=device.get_device())
             print(send_new_device.status_code)
