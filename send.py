@@ -48,7 +48,7 @@ for result in results["processes"]:
         "local_address": ip_lookup_online("87.192.224.146")
     }
     send_connect_data = {
-        "application_hash": result["hash"],
+        "hash": result["hash"],
         "local_address": local_address,
         "remote_address": remote_address,
         "more_info": more_info
